@@ -35,7 +35,11 @@ if alphabet_count > 2 :
     for i in range(letter_count):
         formula = (int(alphabet_count) ** i) * positions_letter[i]
         summa += formula
-        print(f"{alphabet_count}^{i} * {letter_positions[i]}")
+        if i < letter_count-1:
+            print(f"{alphabet_count}^{i} * {letter_positions[i]}+")
+        else:
+            print(f"{alphabet_count}^{i} * {letter_positions[i]} = ")
+
 
     print(f"{summa}")
 
