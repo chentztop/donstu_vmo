@@ -1,16 +1,13 @@
 import random
 import re
 
-
-
-
-
 while True:
     print('1. Задание-1')
     print('2. Задание_2')
     print('3. Задание_3')
     print('4. Задание_4')
-    print('4. Задание_5')
+    print('5. Задание_5')
+    print('6. Задание_6')
 
     выбор = input('Выберите пункт меню: ')
     if выбор == '1':
@@ -135,6 +132,35 @@ while True:
         word_occurrences = count_word_occurrences_in_file(filename)
         for word, count in word_occurrences.items():
             print(f"Слово '{word}' встречается {count} раз(а) в файле.")
+
+    if выбор == '6':
+        text = input("Введите текст для добавления в файл: ")
+
+        # Запись текста в файл
+        with open('текс_6', 'a') as file:
+            file.write(text + '\n')
+
+        # Определенное слово для поиска
+        search_word = 'Жена'
+
+        # Поиск определенного слова в файле
+        with open('текс_6', 'r') as file:
+            lines = file.readlines()
+            word_count = 0
+            for line_number, line in enumerate(lines, start=1):
+                words = line.split()
+                for word in words:
+                    if search_word in word:
+                        word_count += 1
+                        print(f"Слово '{search_word}' найдено в строке {line_number}, слово номер {word_count}: {word}")
+
+        if word_count == 0:
+            print(f"Слово '{search_word}' не найдено в файле.")
+
+
+
+
+
 
 
 

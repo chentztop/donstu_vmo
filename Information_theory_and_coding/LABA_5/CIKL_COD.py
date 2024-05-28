@@ -1,7 +1,7 @@
 import logging
 
 from utils import polynom_bch_table, DICT_POLYNOM_BCH
-from src_2 import encode, decode
+from src import encode, decode
 
 import random
 
